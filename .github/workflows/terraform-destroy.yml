@@ -83,7 +83,11 @@ jobs:
                 del(.metadata.annotations."veecode/cluster-name") |
                 del(.metadata.annotations."kubernetes.io/*")
                ''' -i .platform/component.yaml
-
+               
+      - name: sleep 2
+        run: |
+          sleep 2
+          
       - name: Publish catalog info
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
